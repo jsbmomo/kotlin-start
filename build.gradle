@@ -1,0 +1,16 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+//    compile 'com.google.api-client:google-api-client:1.32.1'
+    compile 'com.google.apis:google-api-services-oauth2:v2-rev20200213-1.32.1'
+}
