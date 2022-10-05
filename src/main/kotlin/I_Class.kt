@@ -10,12 +10,27 @@ fun main () {
 // kotlin의 생성자
 // kotlin에서는 field만 만들면 getter와 setter를 자동으로 만들어준다.
 // kotlin에서는 default가 public
-class Person1(val name:String = "Seung", var age: Int) {
-  init { // init은 클래스가 초기화(생성)되는 시점에 한 번 호출되는 블록
+class Person1(name: String = "Seung", var age: Int) {
+
+//  val name = name
+//    get() = field.uppercase()
+//  fun getUppercaseName(): String = return this.name.uppercase()
+
+  var name = name
+    set(value) {
+      field = value.uppercase() // name = value.uppercase() <- 무한루프 발생!
+    }
+
+  val uppercaseName: String
+    get() = this.name.uppercase()
+
+  // init은 클래스가 초기화(생성)되는 시점에 한 번 호출되는 블록
+  init {
     if (age <= 0) {
       throw IllegalArgumentException("나이는 ${age}일 수 없습니다.")
     }
   }
+
 
   constructor(name: String): this(name, 1) // 부생성자 (추가적인 생성자)
 
