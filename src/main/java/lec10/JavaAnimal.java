@@ -1,3 +1,5 @@
+package lec10;
+
 public abstract class JavaAnimal {
 
   protected final String species;

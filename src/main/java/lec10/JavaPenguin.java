@@ -1,10 +1,18 @@
-public final class JavaPenguin extends JavaAnimal {
+package lec10;
+
+public final class JavaPenguin extends JavaAnimal implements Javaflyable, JavaSwimable {
 
   private final int wingCount;
 
   public JavaPenguin(String species) {
     super(species, 2);
     this.wingCount = 2;
+  }
+
+  @Override
+  public void act() {
+    JavaSwimable.super.act();
+    Javaflyable.super.act();
   }
 
   @Override
@@ -16,4 +24,5 @@ public final class JavaPenguin extends JavaAnimal {
   public int getLegCount() {
     return super.legCount + this.wingCount;
   }
+
 }

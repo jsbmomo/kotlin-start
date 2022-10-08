@@ -1,3 +1,5 @@
+package lec10;
+
 public class JavaCat extends JavaAnimal {
   public JavaCat(String species) {
     super(species, 4);
